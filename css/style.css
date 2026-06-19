@@ -1,0 +1,530 @@
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root{
+    --primary: #14213D;
+    --primary-dark: #0f1a31;
+
+    --accent: #FCA311;
+    --accent-dark: #d98b00;
+
+    --background: #E5E5E5;
+    --surface: #FFFFFF;
+
+    --border: #c8c8c8;
+    --input-border: #7f9db9;
+
+    --text: #000000;
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   ELEMENTOS BASE
+========================= */
+
+button,
+input{
+    border-radius: 0;
+}
+
+button:focus,
+input:focus{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    font-family: Tahoma, "Segoe UI", sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.5;
+
+    padding: 2rem;
+
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    margin-bottom: 1rem;
+}
+
+header h1{
+    font-size: 2rem;
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+    padding: .75rem 1rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        inset -1px -1px 0 #d0d0d0;
+}
+
+/* =========================
+   MAIN / LAYOUT
+========================= */
+
+main{
+    max-width: 1600px;
+
+    margin: 0 auto;
+}
+
+.layout{
+    display: flex;
+
+    gap: 1rem;
+
+    align-items: flex-start;
+}
+
+.content{
+    flex: 1;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width: 280px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    flex-shrink: 0;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    padding: 1rem;
+
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        inset -1px -1px 0 #d0d0d0;
+}
+
+.sidebar-section{
+    margin-bottom: 2rem;
+}
+
+.sidebar-section:last-child{
+    margin-bottom: 0;
+}
+
+.sidebar-section h3{
+    font-size: 1rem;
+
+    color: var(--primary);
+
+    margin-bottom: .75rem;
+
+    padding-bottom: .5rem;
+
+    border-bottom: 1px solid var(--background);
+}
+
+/* =========================
+   BOTÕES DA SIDEBAR
+========================= */
+
+.feature-btn{
+    display: block;
+
+    width: 100%;
+
+    text-align: left;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    border: none;
+
+    padding: .75rem;
+
+    margin-bottom: .25rem;
+
+    font-weight: 500;
+
+    transition: .15s ease;
+
+    cursor: pointer;
+}
+
+.feature-btn:hover{
+    background: var(--background);
+}
+
+.active-feature{
+    background: var(--primary);
+
+    color: var(--surface);
+}
+
+.active-feature:hover{
+    background: var(--primary);
+}
+
+/* =========================
+   LINGUAGENS
+========================= */
+
+.tab{
+    width: auto;
+
+    padding: .45rem .8rem;
+
+    background: var(--primary);
+
+    color: var(--surface);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    font-size: .9rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.tab:hover{
+    background: #1c315a;
+}
+
+.tab.active{
+    background: var(--accent);
+
+    color: var(--primary);
+
+    border-color: var(--accent);
+}
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
+
+.card{
+    display: flex;
+
+    gap: 1rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    padding: 1rem;
+
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        inset -1px -1px 0 #d0d0d0;
+}
+
+/* =========================
+   DEMONSTRAÇÃO
+========================= */
+
+.demo{
+    flex: 1;
+
+    padding: .5rem;
+}
+
+.demo h2{
+    color: var(--primary);
+
+    font-size: 1.8rem;
+
+    margin-bottom: 1rem;
+}
+
+.demo p{
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input{
+    width: 100%;
+
+    padding: .75rem;
+
+    margin-bottom: 1rem;
+
+    background: var(--surface);
+
+    border: 1px solid var(--input-border);
+
+    font-size: 1rem;
+
+    outline: none;
+}
+
+input:focus{
+    border-color: var(--accent);
+}
+
+/* =========================
+   BOTÕES DE AÇÃO
+========================= */
+
+.buttons{
+    display: flex;
+
+    gap: .75rem;
+
+    flex-wrap: wrap;
+
+    margin: 1.5rem 0;
+}
+
+button{
+    border: 1px solid var(--input-border);
+
+    background: #f0f0f0;
+
+    color: var(--text);
+
+    font-weight: 600;
+
+    font-size: 1rem;
+
+    padding: .75rem 1rem;
+
+    cursor: pointer;
+
+    transition: .15s ease;
+}
+
+button:hover{
+    background: #e3e3e3;
+}
+
+button:active{
+    background: #d9d9d9;
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+#resultado{
+    background: var(--surface);
+
+    border: 1px solid var(--input-border);
+
+    padding: 1rem;
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    font-weight: 600;
+}
+
+/* =========================
+   CÓDIGO
+========================= */
+
+.code{
+    flex: 1;
+
+    background: var(--primary);
+
+    color: var(--surface);
+
+    border: 1px solid #0d1628;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.code-header{
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    background: var(--primary-dark);
+
+    padding: .75rem 1rem;
+
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.code-title{
+    color: var(--accent);
+
+    font-size: .9rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.language-selector{
+    display: flex;
+
+    gap: .5rem;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+}
+
+.code-content{
+    max-height: 70vh;
+
+    overflow-y: auto;
+
+    padding: 1rem;
+}
+
+.code pre{
+    white-space: pre-wrap;
+
+    overflow-x: auto;
+
+    line-height: 1.8;
+
+    font-size: .95rem;
+
+    font-family:
+        Consolas,
+        Monaco,
+        "Courier New",
+        monospace;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.code-content::-webkit-scrollbar{
+    width: 10px;
+}
+
+.code-content::-webkit-scrollbar-track{
+    background: rgba(255,255,255,.05);
+}
+
+.code-content::-webkit-scrollbar-thumb{
+    background: var(--accent);
+
+    border-radius: 999px;
+}
+
+.code-content::-webkit-scrollbar-thumb:hover{
+    background: var(--accent-dark);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px){
+
+    body{
+        padding: 1rem;
+    }
+
+    .layout{
+        flex-direction: column;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .sidebar{
+        width: 100%;
+
+        max-height: none;
+    }
+
+    .card{
+        flex-direction: column;
+
+        width: 100%;
+
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px){
+
+    header h1{
+        font-size: 1.5rem;
+    }
+
+    .buttons{
+        flex-direction: column;
+    }
+
+    .buttons button{
+        width: 100%;
+    }
+
+    .code{
+        overflow: visible;
+    }
+
+    .code-header{
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .language-selector{
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+    .code-content{
+        max-height: none;
+
+        overflow: visible;
+    }
+}
