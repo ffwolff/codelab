@@ -3,6 +3,9 @@
 ========================= */
 
 :root{
+
+    /* Tema padrão */
+
     --primary: #14213D;
     --primary-dark: #0f1a31;
 
@@ -16,6 +19,17 @@
     --input-border: #7f9db9;
 
     --text: #000000;
+
+    --shadow-light: #FFFFFF;
+    --shadow-dark: #c8c8c8;
+
+    --button-bg: #FFFFFF;
+    --button-hover: #E5E5E5;
+    --button-active: #c8c8c8;
+
+    --tab-hover: #0f1a31;
+
+    --code-border: #0f1a31;
 }
 
 /* =========================
@@ -66,25 +80,57 @@ body{
 ========================= */
 
 header{
-    margin-bottom: 1rem;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    width:100%;
+
+    gap:1rem;
+
+    margin-bottom:1rem;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        inset 1px 1px 0 var(--shadow-light),
+        inset -1px -1px 0 var(--shadow-dark);
 }
 
 header h1{
-    font-size: 2rem;
 
-    color: var(--primary);
+    font-size:2rem;
 
-    font-weight: 700;
+    color:var(--primary);
 
-    padding: .75rem 1rem;
+    font-weight:700;
 
-    background: var(--surface);
+    padding:.75rem 1rem;
+}
 
-    border: 1px solid var(--border);
+#matrix-toggle{
 
-    box-shadow:
-        inset 1px 1px 0 #ffffff,
-        inset -1px -1px 0 #d0d0d0;
+    background:var(--surface);
+
+    color:var(--primary);
+
+    border:1px solid var(--border);
+
+    padding:.75rem 1rem;
+
+    font-weight:700;
+
+    min-width:180px;
+}
+
+#matrix-toggle:hover{
+
+    background:var(--background);
 }
 
 /* =========================
@@ -102,7 +148,7 @@ main{
 
     gap: 1rem;
 
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .content{
@@ -129,8 +175,8 @@ main{
     padding: 1rem;
 
     box-shadow:
-        inset 1px 1px 0 #ffffff,
-        inset -1px -1px 0 #d0d0d0;
+        inset 1px 1px 0 var(--shadow-light),
+        inset -1px -1px 0 var(--shadow-dark);
 }
 
 .sidebar-section{
@@ -218,7 +264,7 @@ main{
 }
 
 .tab:hover{
-    background: #1c315a;
+    background: var(--tab-hover);
 }
 
 .tab.active{
@@ -245,8 +291,8 @@ main{
     padding: 1rem;
 
     box-shadow:
-        inset 1px 1px 0 #ffffff,
-        inset -1px -1px 0 #d0d0d0;
+        inset 1px 1px 0 var(--shadow-light),
+        inset -1px -1px 0 var(--shadow-dark);
 }
 
 /* =========================
@@ -312,7 +358,7 @@ input:focus{
 button{
     border: 1px solid var(--input-border);
 
-    background: #f0f0f0;
+    background: var(--button-bg);
 
     color: var(--text);
 
@@ -328,11 +374,11 @@ button{
 }
 
 button:hover{
-    background: #e3e3e3;
+    background: var(--button-hover);
 }
 
 button:active{
-    background: #d9d9d9;
+    background: var(--button-active);
 }
 
 /* =========================
@@ -366,7 +412,7 @@ button:active{
 
     color: var(--surface);
 
-    border: 1px solid #0d1628;
+    border: 1px solid var(--code-border);
 
     overflow: hidden;
 
@@ -390,7 +436,7 @@ button:active{
 
     padding: .75rem 1rem;
 
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid var(--border);
 }
 
 .code-title{
@@ -438,6 +484,64 @@ button:active{
 }
 
 /* =========================
+   MATRIX CODE MODE
+========================= */
+
+.code.matrix-mode{
+    background: #030303;
+
+    border-color: #008529;
+
+    color: #1CA152;
+}
+
+.code.matrix-mode .code-header{
+    background: #030303;
+
+    border-bottom: 1px solid #008529;
+}
+
+.code.matrix-mode .code-title{
+    color: #1CA152;
+}
+
+.code.matrix-mode pre{
+    color: #1CA152;
+}
+
+.code.matrix-mode .tab{
+    background: #030303;
+
+    color: #1CA152;
+
+    border-color: #008529;
+}
+
+.code.matrix-mode .tab:hover{
+    background: #00852933;
+}
+
+.code.matrix-mode .tab.active{
+    background: #008529;
+
+    color: #030303;
+
+    border-color: #1CA152;
+}
+
+.code.matrix-mode .code-content::-webkit-scrollbar-track{
+    background: #030303;
+}
+
+.code.matrix-mode .code-content::-webkit-scrollbar-thumb{
+    background: #008529;
+}
+
+.code.matrix-mode .code-content::-webkit-scrollbar-thumb:hover{
+    background: #1CA152;
+}
+
+/* =========================
    SCROLLBAR
 ========================= */
 
@@ -446,7 +550,7 @@ button:active{
 }
 
 .code-content::-webkit-scrollbar-track{
-    background: rgba(255,255,255,.05);
+    background: var(--primary-dark);
 }
 
 .code-content::-webkit-scrollbar-thumb{

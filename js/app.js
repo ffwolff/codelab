@@ -425,3 +425,27 @@ window.onload = () => {
         "calculadora"
     );
 };
+
+/* ======================
+   MATRIX
+====================== */
+
+function toggleMatrixMode(button){
+
+    const codePanel =
+        document.querySelector(".code");
+
+    codePanel.classList.toggle(
+        "matrix-mode"
+    );
+
+    const ativo =
+        codePanel.classList.contains(
+            "matrix-mode"
+        );
+
+    button.textContent =
+        ativo
+            ? "Matrix: ON"
+            : "Matrix: OFF";
+}
