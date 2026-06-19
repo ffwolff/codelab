@@ -432,20 +432,13 @@ window.onload = () => {
 
 function toggleMatrixMode(button){
 
-    const codePanel =
-        document.querySelector(".code");
+    const body = document.body;
+    const code = document.querySelector(".code");
 
-    codePanel.classList.toggle(
-        "matrix-mode"
-    );
+    body.classList.toggle("matrix-mode");
+    code.classList.toggle("matrix-mode");
 
-    const ativo =
-        codePanel.classList.contains(
-            "matrix-mode"
-        );
+    const ativo = body.classList.contains("matrix-mode");
 
-    button.textContent =
-        ativo
-            ? "Matrix: ON"
-            : "Matrix: OFF";
+    button.textContent = ativo ? "Matrix: ON" : "Matrix: OFF";
 }
