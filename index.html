@@ -5,10 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CodeLab</title>
 
@@ -26,8 +23,8 @@
             id="matrix-btn"
             class="tab"
             onclick="toggleMatrixMode(this)"
-            >
-                Matrix: OFF
+        >
+            Matrix: OFF
         </button>
 
     </header>
@@ -35,34 +32,10 @@
     <main class="layout">
 
         <aside class="sidebar">
-
             <div class="sidebar-section">
-
                 <h3>Funções</h3>
-
-                <button
-                    class="feature-btn active-feature"
-                    onclick="carregarFuncao('calculadora', this)"
-                >
-                    ▸ Calculadora
-                </button>
-
-                <button
-                    class="feature-btn"
-                    onclick="carregarFuncao('fatorial', this)"
-                >
-                    ▸ Fatorial
-                </button>
-
-                <button
-                    class="feature-btn"
-                    onclick="carregarFuncao('fibonacci', this)"
-                >
-                    ▸ Fibonacci
-                </button>
-
+                <div id="menu-funcoes"></div>
             </div>
-
         </aside>
 
         <section class="content">
@@ -114,7 +87,7 @@
                                 onclick="trocarLinguagem('python', this)"
                             >
                                 Python
-                            </button>                            
+                            </button>
 
                         </div>
 
